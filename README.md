@@ -37,7 +37,7 @@ UMLS_API_KEY=your_key_here   # Free at https://uts.nlm.nih.gov/uts/profile
 docker compose up --build -d
 ```
 
-The server starts on `https://localhost:8010/mcp` with a self-signed TLS certificate.
+The server starts on `http://localhost:8010/mcp`.
 
 ### 3. Connect your MCP client
 
@@ -48,7 +48,7 @@ Add this to your MCP client configuration (Claude Desktop, Claude Code, etc.):
   "mcpServers": {
     "med_lookup": {
       "type": "streamable-http",
-      "url": "https://localhost:8010/mcp"
+      "url": "http://localhost:8010/mcp"
     }
   }
 }
@@ -115,12 +115,12 @@ docker compose up --build -d     # Rebuild after code changes
 ## Verifying the Server
 
 ```bash
-# Check the endpoint (self-signed cert requires -k)
-curl -k https://localhost:8010/mcp
+# Check the endpoint
+curl http://localhost:8010/mcp
 
 # Interactive testing with MCP Inspector
 npx @modelcontextprotocol/inspector
-# Connect to: https://localhost:8010/mcp
+# Connect to: http://localhost:8010/mcp
 ```
 
 ## System Prompt Examples
@@ -135,7 +135,6 @@ Example system prompts for configuring your AI assistant to use these tools effe
 - **Python 3.12** with FastMCP, httpx, Pydantic
 - **SQLite** for local abbreviation and custom term storage
 - **Docker** with volume-persisted database
-- **Self-signed TLS** generated at build time
 
 ## License
 
