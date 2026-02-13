@@ -1,0 +1,16 @@
+services:
+  med-lookup:
+    build: .
+    ports:
+      - "8010:8010"
+    environment:
+      - UMLS_API_KEY=${UMLS_API_KEY:-}
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8010
+      - DATABASE_PATH=/app/data/medical.db
+    volumes:
+      - medical_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  medical_data:
