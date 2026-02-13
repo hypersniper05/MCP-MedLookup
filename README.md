@@ -123,6 +123,13 @@ npx @modelcontextprotocol/inspector
 # Connect to: https://localhost:8010/mcp
 ```
 
+## System Prompt Examples
+
+Example system prompts for configuring your AI assistant to use these tools effectively:
+
+- **[Detailed](system-prompt-example/system_prompt_detailed.txt)** — Full prompt with step-by-step research workflow, multi-step examples, and search rules. Best for larger models with thinking enabled.
+- **[Simple](system-prompt-example/system_prompt_simple.txt)** — Compact, to-the-point prompt covering all 3 tools and core rules. Best for smaller or faster models.
+
 ## Tech Stack
 
 - **Python 3.12** with FastMCP, httpx, Pydantic
